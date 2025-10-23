@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMKN 2 CYBER GUARD | PELATIHAN KEAMANAN ETIS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+          --color-dark-bg: #0d1117;
+          --color-container-bg: #161b22;
+          --color-text-light: #c9d1d9;
+          --color-neon-green: #2ecc71;
+          --color-neon-blue: #3498db;
+          --color-alert-red: #e74c3c;
+          --color-separator: #444c56;
+          
+          --font-serif: 'Playfair Display', serif;
+          --font-sans: 'Montserrat', sans-serif;
+          --font-mono: 'Share Tech Mono', monospace;
+      }
+      
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      
+      body {
+          background-color: var(--color-dark-bg);
+          color: var(--color-text-light);
+          font-family: var(--font-sans);
+          line-height: 1.7;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          min-height: 100vh;
+      }
+      
+      .container {
+          max-width: 900px;
+          width: 100%;
+          margin: 0 auto;
+          padding: 30px;
+          background-color: var(--color-container-bg);
+          border-radius: 8px;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5), 0 0 40px var(--color-neon-green, 0.1);
+          border: 1px solid var(--color-separator);
+          overflow: hidden;
+      }
+
+      @keyframes neonGlow {
+          0%, 100% { text-shadow: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green); }
+          50% { text-shadow: 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 30px var(--color-neon-green); }
+      }
+
+      .header {
+          border-bottom: 2px solid var(--color-neon-green);
+          padding-bottom: 15px;
+          margin-bottom: 40px;
+          text-align: center;
+      }
+      
+      .logo {
+          font-family: var(--font-mono);
+          font-size: 3.8rem;
+          color: var(--color-text-light);
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          animation: neonGlow 2s ease-in-out infinite alternate;
+          margin-bottom: 5px;
+      }
+      .logo:hover {
+        color: var(--color-neon-green);
+      }
+      
+      .tagline {
+          color: var(--color-neon-blue);
+          font-size: 0.95rem;
+          margin-top: 5px;
+          font-weight: 300;
+          letter-spacing: 1px;
+      }
+      
+      .meta-info {
+          font-family: var(--font-mono);
+          font-size: 0.85rem;
+          color: var(--color-neon-blue);
+          margin-bottom: 15px;
+          text-align: center;
+          background-color: rgba(var(--color-neon-blue, #3498db), 0.1);
+          padding: 8px 15px;
+          border-radius: 4px;
+          border: 1px solid var(--color-neon-blue);
+          display: block;
+      }
+      
+      .separator {
+          color: var(--color-separator);
+          padding: 0 8px;
+      }
+      
+      .article-title {
+          font-family: var(--font-serif);
+          font-size: 3rem;
+          color: var(--color-neon-green);
+          line-height: 1.25;
+          margin-bottom: 30px;
+          text-shadow: 0 0 8px rgba(var(--color-neon-green), 0.5);
+          text-align: center;
+      }
+
+      .visual-alert {
+          width: 100%;
+          height: 280px;
+          background-color: rgba(var(--color-alert-red, #e74c3c), 0.15);
+          border: 3px solid var(--color-alert-red);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 35px;
+          box-shadow: 0 0 20px rgba(var(--color-alert-red, #e74c3c), 0.7);
+          border-radius: 6px;
+          font-family: var(--font-mono);
+          font-size: 1.7rem;
+          color: #ffdd00;
+          text-shadow: 0 0 10px #ffdd00;
+          position: relative;
+          overflow: hidden;
+      }
+      .visual-alert p {
+          animation: pulseGlow 1.5s infinite alternate;
+          position: relative;
+          z-index: 2;
+          padding: 15px;
+          text-align: center;
+      }
+      @keyframes pulseGlow {
+          0% { transform: scale(1); opacity: 0.8; }
+          100% { transform: scale(1.02); opacity: 1; }
+      }
+      .visual-alert::before {
+          content: '01101011 01101111 01100100 01100101 00100000 01110010 01100001 01101101 01100001 01101000 00100000 01101011 01100001 01101101 01101001 00100000 01100001 01100011 01110100 01101001 01110110 01100001 01110100 01100101';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          color: rgba(var(--color-neon-green, #2ecc71), 0.1);
+          font-size: 0.8rem;
+          word-break: break-all;
+          overflow: hidden;
+          opacity: 0.7;
+          animation: codeScroll 60s linear infinite;
+          z-index: 1;
+      }
+      @keyframes codeScroll {
+          0% { transform: translateY(0%); }
+          100% { transform: translateY(-100%); }
+      }
+
+
+      .article-content p {
+          margin-bottom: 25px;
+          font-size: 1.1rem;
+          color: var(--color-text-light);
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .article-content p.fade-in {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      
+      .article-content strong {
+          color: var(--color-neon-blue);
+      }
+      
+      .quote {
+          border-left: 5px solid var(--color-neon-green);
+          padding-left: 25px;
+          margin: 35px 0;
+          font-style: italic;
+          color: #aaa;
+          font-size: 1.15rem;
+          background-color: rgba(var(--color-neon-green, #2ecc71), 0.05);
+          border-radius: 4px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .quote.fade-in {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      .footer {
+          text-align: center;
+          margin-top: 60px;
+          padding-top: 20px;
+          border-top: 1px solid var(--color-separator);
+          font-size: 0.8rem;
+          color: #666;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 1s ease-out, transform 1s ease-out;
+      }
+      .footer.fade-in {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      @media (max-width: 600px) {
+          body {
+              padding: 10px;
+          }
+          .container {
+            padding: 20px;
+          }
+          .logo {
+              font-size: 2.8rem;
+              letter-spacing: 2px;
+          }
+          .tagline {
+              font-size: 0.8rem;
+          }
+          .article-title {
+              font-size: 2rem;
+              margin-bottom: 20px;
+          }
+          .visual-alert {
+              height: 180px;
+              font-size: 1.1rem;
+          }
+          .article-content p, .quote {
+            font-size: 1rem;
+          }
+      }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="header">
+            <h1 class="logo" id="main-logo">CYBER GUARD</h1>
+            <p class="tagline">SMKN 2 TECH JOURNAL | Mengupas Tuntas Dunia Digital & Keamanan Etis</p>
+        </header>
+        
+        <main class="article-main">
+            
+            <div class="meta-info">
+                <span class="category">KEAMANAN SIBER</span>
+                <span class="separator">|</span>
+                <span class="date">23 OKTOBER 2025</span>
+                <span class="separator">|</span>
+                <span class="author">M. RIZKI IRAWAN/XI TKJ 1</span>
+            </div>
+
+            <h2 class="article-title" id="article-main-title">SEKOLAH MENUJU ERA DIGITAL MELALUI PELATIHAN KEAMANAN ETIS</h2>
+
+            <div class="visual-alert">
+                <p>[SECURITY ALERT: CODE OVERRIDE INITIATED]</p>
+            </div>
+
+            <div class="article-content">
+                <p><strong>Probolinggo/6-13 September 2025</strong> - Salah satu guru teknik komputer dan jaringan SMKN 2 Probolinggo telah berinisiatif mengadakan pelatihan etis bagi siswa yang berminat pada dunia siber dan keamanan jaringan.</p>
+                <p>Pelatihan ini menjadi langkah awal sekolah dalam membentuk generasi yang tidak hanya mahir menggunakan, tetapi juga mampu membangun kesadaran akan pentingnya menjaga keamanan data pribadi dan korporasi.</p>
+                <p>Di tengah pesatnya perkembangan teknologi dan kebutuhan tenaga kerja yang kompeten, guru jurusan TKJ mengadakan pelatihan keamanan etis yang bertujuan untuk membekali siswa yang berminat belajar dan ingin memperdalam pemahaman mengenai prinsip-prinsip etika dalam dunia siber. Pelatihan ini membuka wawasan siswa tentang seluk beluk serangan dan pertahanan digital.</p>
+                
+                <blockquote class="quote">
+                    “Tujuan utama diselenggarakan pelatihan ini adalah melindungi siswa agar tidak menyalahgunakan pengetahuan mereka dan dapat membedakan mana yang merupakan hacker dan mana yang merupakan cracker atau pelaku kejahatan siber,” ujar salah satu inisiator.
+                </blockquote>
+                
+                <p>Menariknya, kegiatan ini dilaksanakan secara **daring/online** dan diikuti oleh beberapa peserta yang antusias dari rumah masing-masing, walaupun demikian, sesi berlangsung interaktif dan kondusif berkat bimbingan langsung dari pihak pemateri.</p>
+                <p>Selain guru sebagai penggerak, kegiatan ini juga melibatkan pihak luar yang menyediakan server khusus, materi praktis, serta studi kasus nyata menuju simulasi keamanan jaringan dan cara mengatasi/melindungi diri dari serangan siber.</p>
+                <p>Melalui pelatihan keamanan etis ini, SMKN 2 Probolinggo berharap mampu mencetak generasi muda yang berintegritas, mengedepankan etika, serta sadar akan pentingnya keamanan siber sebagai aset berharga di dunia digital.</p>
+            </div>
+            
+        </main>
+        
+        <footer class="footer">
+            &copy; 2025 SMKN 2 Probolinggo 
+        </footer>
+    </div>
+
+    <script>
+        const articleTitleElement = document.getElementById('article-main-title');
+        const originalTitleText = articleTitleElement.textContent;
+        const chars = '!<>-_\\/[]{}—=+*&^%$#@';
+        const delay = 30;
+        const scrambleDuration = 1000;
+
+        function scrambleText(element, originalText) {
+            let frame = 0;
+            const scrambleInterval = setInterval(() => {
+                let scrambledText = '';
+                for (let i = 0; i < originalText.length; i++) {
+                    const r = Math.random();
+                    scrambledText += (r < 0.3) ? chars[Math.floor(Math.random() * chars.length)] : originalText[i];
+                }
+                element.textContent = scrambledText;
+
+                if (frame * delay >= scrambleDuration) {
+                    clearInterval(scrambleInterval);
+                    revealText(element, originalText);
+                }
+                frame++;
+            }, delay);
+        }
+
+        function revealText(element, originalText) {
+            let frame = 0;
+            const revealInterval = setInterval(() => {
+                const charsToReveal = Math.floor(frame / (originalText.length / (scrambleDuration / delay)));
+                let revealedText = originalText.substring(0, charsToReveal);
+                let remainingText = originalText.substring(charsToReveal);
+                
+                let finalScrambled = '';
+                for (let i = 0; i < remainingText.length; i++) {
+                    finalScrambled += chars[Math.floor(Math.random() * chars.length)];
+                }
+                element.textContent = revealedText + finalScrambled;
+
+                if (revealedText.length === originalText.length) {
+                    clearInterval(revealInterval);
+                    element.textContent = originalText;
+                }
+                frame++;
+            }, delay / 2);
+        }
+
+        const fadeInElements = document.querySelectorAll('.article-content p, .quote, .footer');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                scrambleText(articleTitleElement, originalTitleText);
+            }, 500);
+
+            fadeInElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
